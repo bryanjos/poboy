@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ffi (1.9.3)
+    rake (0.9.6)
+    ruby-llvm (3.4.0)
+      ffi (~> 1.7)
+      rake (~> 0.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ruby-llvm
