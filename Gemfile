@@ -1,3 +1,3 @@
 source "https://rubygems.org"
 
-gem 'ruby-llvm'
+gem "ruby-llvm", git: "https://github.com/ruby-llvm/ruby-llvm"

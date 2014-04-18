@@ -1,14 +1,19 @@
+GIT
+  remote: https://github.com/ruby-llvm/ruby-llvm
+  revision: 38ca78bd763ee25b0c652a47a5c543ac36ce0a0d
+  specs:
+    ruby-llvm (3.4.0)
+      ffi (~> 1.7)
+      rake (~> 0.9)
+
 GEM
   remote: https://rubygems.org/
   specs:
     ffi (1.9.3)
     rake (0.9.6)
-    ruby-llvm (3.4.0)
-      ffi (~> 1.7)
-      rake (~> 0.9)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  ruby-llvm
+  ruby-llvm!
