@@ -13,7 +13,7 @@ grammar PoBoy
   end
 
   rule argument
-    identifier':'type <Argument>
+    identifier ':' type <Argument>
   end
 
   rule type
