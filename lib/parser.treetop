@@ -1,0 +1,46 @@
+grammar PoBoy
+  
+  rule body
+    (assignment / identifier / float / integer / string / space )* <Body>
+  end
+
+  rule assignment
+    identifier space? '=' space? (identifier / float / integer / string) <Assignment>
+  end
+
+  rule function
+    'fn' space identifier space? '(' space? ( argument ( space? ',' argument )* )? space? ')' space? argument space? '{' block '}' <Function>
+  end
+
+  rule argument
+    identifier':'type <Argument>
+  end
+
+  rule type
+    [A-Z*] [a-zA-Z0-9_\=\*]* <Type>
+  end
+
+  rule integer
+    ('+' / '-')? [0-9]+ <IntegerLiteral>
+  end
+  
+  rule float
+    ('+' / '-')? [0-9]+ (('.' [0-9]+) / ('e' [0-9]+)) <FloatLiteral>
+  end
+  
+  rule string
+    '"' ([^"\\] / "\\" . )* '"' <StringLiteral>
+  end
+  
+  rule identifier
+    [a-zA-Z\=\*] [a-zA-Z0-9_\=\*]* <Identifier>
+  end
+
+  rule newline
+    [\n]+
+  end
+
+  rule space
+    [\s]+
+  end
+end

@@ -2,6 +2,7 @@
 # http://llvm.org/docs/LangRef.html#module-structure
 require 'llvm/core'
 require 'llvm/execution_engine'
+require './lib/parser'
 
 HELLO_STRING = "Hello, World!"
 
@@ -47,3 +48,5 @@ LLVM.init_jit
 engine = LLVM::JITCompiler.new(mod)
 engine.run_function(main)
 engine.dispose
+
+puts Parser.parse('a = 1').inspect
