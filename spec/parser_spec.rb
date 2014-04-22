@@ -23,4 +23,9 @@ describe 'Parser' do
     expect(Parser.parse('a = "hello"')).to eq [:body, [[:assignment, [[:identifier, :a], [:string, "hello"]]]]]
     expect(Parser.parse('b = 1')).to eq [:body, [[:assignment, [[:identifier, :b], [:int, 1]]]]]
   end
+
+  it 'must parse functions' do
+    expect(Parser.parse('fn test:Void { a = 1 }')).to eq [:body, [[:function, [[:identifier, :test], [:type, :Void], [:body, [[:assignment, [[:identifier, :a], [:int, 1]]]]]]]]]
+    expect(Parser.parse('fn do_test(a:Int):Int { a } ')).to eq [:body, [[:function, [[:identifier, :do_test], [:argument, [:identifier, :a], [:type, :Int]], [:type, :Int], [:body, [[:identifier, :a]]]]]]]
+  end
 end

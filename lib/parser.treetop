@@ -1,7 +1,7 @@
 grammar PoBoy
   
   rule body
-    (assignment / identifier / float / integer / string / space )* <Body>
+    (assignment / function / identifier / float / integer / string / space )* <Body>
   end
 
   rule assignment
@@ -9,7 +9,7 @@ grammar PoBoy
   end
 
   rule function
-    'fn' space identifier space? '(' space? ( argument ( space? ',' argument )* )? space? ')' space? argument space? '{' block '}' <Function>
+    'fn' space identifier space? ( '(' space? ( argument ( space? ',' argument )* )? space? ')' )? space? ':' space? type space? '{' body '}' <Function>
   end
 
   rule argument
